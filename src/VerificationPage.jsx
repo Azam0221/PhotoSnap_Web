@@ -9,7 +9,8 @@ import {
   Fingerprint, ChevronDown, Terminal 
 } from 'lucide-react';
 
- const BACKEND_URL = "https://truthchain-backend.up.railway.app/api/evidence";
+ const BACKEND_URL = "https://photosnapbackend-production.up.railway.app/api/evidence";
+
 
 export default function VerificationPage() {
   const [viewState, setViewState] = useState('idle'); 
@@ -20,8 +21,9 @@ export default function VerificationPage() {
   const onFileSelect = useCallback(async (e) => {
     e.preventDefault();
     
+  
     const file = e.target.files?.[0] || e.dataTransfer?.files?.[0];
-    
+
     if (!file) return;
 
     if(e.target.value) {
